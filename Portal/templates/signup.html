@@ -70,7 +70,7 @@
             {% if student %}
             <h4>Fill the remaining details</h4>
             {% else %}
-            <h4>Sign Up</h4>
+            <h4 align="center">Sign Up</h4>
             {% endif %}
         </div>
         <div class="card-body" style="padding-left: 0px;">
@@ -127,16 +127,16 @@
                                    required>
                         </div>
 
-                        <select name="batch" class="btn btn-secondary" data-toggle="dropdown">
+                        <!-- <select name="batch" class="btn btn-secondary" data-toggle="dropdown">
                             <option value="UG-1" style="padding-left: 10px;">UnderGraduate 1st year</option>
                             <option value="UG-2" style="padding-left: 10px; ">UnderGraduate 2nd year</option>
                             <option value="UG-3" style="padding-left: 10px; ">UnderGraduate 3rd year</option>
                             <option value="UG-4" style="padding-left: 10px; ">UnderGraduate 4th year</option>
                             <option value="MS" style="padding-left: 10px; ">MS</option>
                             <option value="Ph.D" style="padding-left: 10px; ">Ph.D</option>
-                        </select>
+                        </select> -->
 
-                        <select name="gender" class="btn btn-secondary " data-toggle="dropdown">
+                        <!-- <select name="gender" class="btn btn-secondary " data-toggle="dropdown">
                             {% if student %}
                             {% if student.Student_Gender == 'M' %}
                             <option value="Male" style="padding-left: 10px; " selected>Male</option>
@@ -147,7 +147,7 @@
                             <option value="Male" style="padding-left: 10px; " selected>Male</option>
                             <option value="Female" style="padding-left: 10px; ">Female</option>
                             {% endif %}
-                        </select>
+                        </select> -->
                         <br>
                         <br>
 
@@ -164,8 +164,8 @@
                                             <thead class="thead-dark" style="width: 100%; padding: 0px;">
                                             <tr style="width: 100%; padding: 0px;">
                                                 <th style="width: 55px; font-weight:normal;">#</th>
-                                                <th style="width: 132px; font-weight:normal; ">Skill</th>
-                                                <th style="font-weight:normal; ">Level</th>
+                                                <th style="width: 132px; font-weight:normal; ">Industries</th>
+                                                <!-- <th style="font-weight:normal; ">Level</th> -->
                                             </tr>
                                             </thead>
 
@@ -185,7 +185,7 @@
                                                                value="{{skill.skill_name}}">
                                                         <span style="padding-left: 10px; "></span>{{skill.skill_name}}
                                                     </td>
-                                                    <td>
+                                                    <!-- <td>
                                                         <select name="{{skill.skill_name}}" class="btn btn-secondary"
                                                                 data-toggle="dropdown ">
                                                             <option value="1" style="padding-left: 10px; " selected>
@@ -196,7 +196,7 @@
                                                             <option value="3" style="padding-left: 10px; ">Advance
                                                             </option>
                                                         </select>
-                                                    </td>
+                                                    </td> -->
                                                 </tr>
                                                 {% endfor %}
 
@@ -213,8 +213,8 @@
                                             <thead class="thead-dark" style="width: 100%; padding: 0px; ">
                                             <tr style="width: 100%; padding: 0px; ">
                                                 <th style="width: 55px; font-weight:normal; ">#</th>
-                                                <th style="width: 145px; font-weight:normal; ">Languages</th>
-                                                <th style="font-weight:normal; ">Fluency</th>
+                                                <th style="width: 145px; font-weight:normal; ">Company Services</th>
+                                                <!-- <th style="font-weight:normal; ">Fluency</th> -->
                                             </tr>
                                             </thead>
                                         </table>
@@ -232,7 +232,7 @@
                                                                value="{{language.language_name}}">
                                                         <span style="padding-left: 10px; "></span>{{language.language_name}}
                                                     </td>
-                                                    <td>
+                                                    <!-- <td>
                                                         <select name="{{language.language_name}}"
                                                                 class="btn btn-secondary" data-toggle="dropdown ">
                                                             <option value="1" style="padding-left: 10px; " selected>
@@ -243,6 +243,8 @@
                                                             <option value="3" style="padding-left: 10px; ">Excellent
                                                             </option>
                                                         </select>
+                                                        </td> -->
+
                                                 </tr>
                                                 {% endfor %}
                                             </table>
@@ -255,7 +257,7 @@
                         <div class="form-group">
                             <label style="font-weight:normal; " for="myFile">Upload Image</label>
                             <br>
-                            <input type="file" id="myFile" name="image" required>
+                            <input type="file" id="myFile" name="image" >
                         </div>
                     </div>
                 </div>
