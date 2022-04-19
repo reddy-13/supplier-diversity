@@ -26,7 +26,7 @@ SECRET_KEY = '2^adjpbk_eq&as+*5cys3d9htah)ajjx@@up444f^+7g-!#p47'
 DEBUG = True
 
 ALLOWED_HOSTS = ['.herokuapp.com', 'localhost','.azurewebsites.net']
-
+y
 
 # Application definition
 
@@ -96,7 +96,7 @@ DATABASES = {
         "PASSWORD": "login123@",
         "HOST": "supplier-server.database.windows.net",
         "PORT": "1433",
-        "OPTIONS": {"driver": "ODBC Driver 13 for SQL Server", 
+        "OPTIONS": {"driver": "ODBC Driver 17 for SQL Server", 
         },
     },
 }
