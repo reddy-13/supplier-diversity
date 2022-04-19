@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '2^adjpbk_eq&as+*5cys3d9htah)ajjx@@up444f^+7g-!#p47'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['.herokuapp.com', 'localhost','.azurewebsites.net']
 
 
 # Application definition
@@ -85,10 +85,20 @@ DATABASES = {
     #     'HOST': 'aakashdbinstance.cdgcb2d25ikg.ap-south-1.rds.amazonaws.com',
     #     'PORT': '3306',
     # }
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'freelancing_portal',
-    }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': 'freelancing_portal',
+    # }
+    "default": {
+        "ENGINE": "mssql",
+        "NAME": "supplier-db",
+        "USER": "greddy",
+        "PASSWORD": "login123@",
+        "HOST": "supplier-server.database.windows.net",
+        "PORT": "1433",
+        "OPTIONS": {"driver": "ODBC Driver 13 for SQL Server", 
+        },
+    },
 }
 
 

@@ -15,6 +15,7 @@ Django = ">=2.1.6"
 gunicorn = "*"
 whitenoise = "*"
 pillow = "*"
+mssql-django = "*"
 
 [dev-packages]
 

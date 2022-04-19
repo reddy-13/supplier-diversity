@@ -102,14 +102,13 @@ def signup_user(request):
         phone_number = request.POST['phno']
         bio = request.POST['bio']
         image = request.FILES['image']
-        batchYear = request.POST['batch']
-        gender = request.POST['gender']
+        # batchYear = request.POST['batch']
+        # gender = request.POST['gender']
         skills = request.POST.getlist('skills[]')
         languages = request.POST.getlist('languages[]')
         user = User.objects.create_user(username=username, first_name=first_name, last_name=last_name, email=email,
                                         password=password1)
-        cuser = CustomUser(user=user, phone_number=phone_number, image=image, bio=bio, batchYear=batchYear,
-                           gender=gender)
+        cuser = CustomUser(user=user, phone_number=phone_number, image=image, bio=bio)
         user.save()
         cuser.save()
         for uskill in skills:
@@ -117,7 +116,7 @@ def signup_user(request):
             cuskill = UsersSkill()
             cuskill.skill = skill
             cuskill.user = cuser
-            cuskill.level_of_proficiency = int(request.POST[skill.skill_name])
+            # cuskill.level_of_proficiency = int(request.POST[skill.skill_name])
             cuskill.save()
         for ulanguage in languages:
             language = CommunicationLanguage.objects.get(
@@ -125,8 +124,8 @@ def signup_user(request):
             culanguage = UsersCommunicationLanguage()
             culanguage.language = language
             culanguage.user = cuser
-            culanguage.level_of_fluency = int(
-                request.POST[language.language_name])
+            # culanguage.level_of_fluency = int(
+            #     request.POST[language.language_name])
             culanguage.save()
         login(request, user)
         return HttpResponseRedirect(reverse("Portal:home"))
