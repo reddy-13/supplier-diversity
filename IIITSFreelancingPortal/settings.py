@@ -25,7 +25,7 @@ SECRET_KEY = '2^adjpbk_eq&as+*5cys3d9htah)ajjx@@up444f^+7g-!#p47'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.herokuapp.com', 'localhost','.azurewebsites.net']
+ALLOWED_HOSTS = ['.herokuapp.com', 'localhost','.azurewebsites.net'] # test
 
 
 # Application definition
