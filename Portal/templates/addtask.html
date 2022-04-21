@@ -244,7 +244,7 @@
 				<input class="ddl" style="color: black; font-weight:normal" id="date" type="date" name="deadline" required>
 				<br>
 				<br>
-				<label><h3 style="color: black; font-weight:normal">Skills:-</h3></label>
+				<label><h3 style="color: black; font-weight:normal">Industry:-</h3></label>
 				<table border=0 class="ddl">
 					{% for skill in skill_list %}
 					<tr>
@@ -252,19 +252,19 @@
 							{{skill.skill_name}}
 							<input type="checkbox" name="skills[]" value="{{skill.skill_name}}">
 						</td>
-						<td align="right">
+						<!-- <td align="right">
 							<select name="{{skill.skill_name}}">
 								<option value="1" selected>Beginner</option>&emsp;
 								<option value="2">Intermediate</option>&emsp;
 								<option value="3">Advanced</option>
 							</select>
-						</td>
+						</td> -->
 					</tr>
 					{% endfor %}
 					</tr>
 				</table>
 				<br>
-				<label><h3 style="color: black; font-weight:normal">Languages:-</h3></label>
+				<label><h3 style="color: black; font-weight:normal">Company services:-</h3></label>
 				<table border=0 class="ddl">
 					{% for language in language_list %}
 					<tr>
@@ -272,13 +272,13 @@
 							{{language.language_name}}
 							<input type="checkbox" name="languages[]" value="{{language.language_name}}">
 						</td>
-						<td align="right">
+						<!-- <td align="right">
 							<select name="{{language.language_name}}">
 								<option value="1" selected>Good</option>&emsp;
 								<option value="2">VeryGood</option>&emsp;
 								<option value="3">Excellent</option>
 							</select>
-						</td>
+						</td> -->
 					</tr>
 					{% endfor %}
 				</table>
