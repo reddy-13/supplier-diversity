@@ -533,7 +533,7 @@
                 <div id="appimg" style="overflow: hidden;  text-align: center; background-color: #213875; padding: 10px;">
                             <img id="lowa"src="/media/icons/java.png"/>
                 </div>
-                Skills
+                Industry
                 <div class="desc" style="width: 100%; padding: 15px; text-align: center;">
                     {% for i in skills_required %}
                     <a style="text-decoration: none;" href="{% url 'Portal:browse_jobs' %}?skill={{i.skill.id}}">
@@ -549,7 +549,7 @@
                         <img id="lowa"src="/media/icons/translator.png"/>
                 </div>
                 <div style="text-align: center;">
-                    Language
+                    Company services
                 <div class="desc" style="width: 100%; padding: 15px; text-align: center;">
                     {% for i in languages_required %}
                     <a style="text-decoration: none;" href="{% url 'Portal:browse_jobs' %}?language={{i.language.id}}">
