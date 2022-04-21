@@ -16,6 +16,9 @@ gunicorn = "*"
 whitenoise = "*"
 pillow = "*"
 mssql-django = "*"
+django-debug-toolbar = "*"
+pyodbc = "*"
+django-pyodbc-azure = "*"
 
 [dev-packages]
 

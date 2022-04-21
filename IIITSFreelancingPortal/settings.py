@@ -37,11 +37,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "debug_toolbar",
 ]
 
-MIDDLEWARE = [
+MIDDLEWARE = [ 
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
+
     'django.middleware.security.SecurityMiddleware',
      "whitenoise.middleware.WhiteNoiseMiddleware",
+    
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -89,7 +93,7 @@ DATABASES = {
     #     'NAME': 'freelancing_portal',
     # }
     "default": {
-        "ENGINE": "mssql",
+        "ENGINE": "sql_server.pyodbc",
         "NAME": "supplier-db",
         "USER": "greddy",
         "PASSWORD": "login123@",
@@ -119,6 +123,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
+INTERNAL_IPS = [
+    # ...
+    "127.0.0.1",
+    # ...
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/

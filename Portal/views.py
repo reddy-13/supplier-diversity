@@ -16,9 +16,9 @@ from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
 
-url =  'http://10.0.80.133:3000/oauth/getDetails'
-#url = 'https://serene-wildwood-35121.herokuapp.com/oauth/changeUr/'
-clientSecret = "445b354949599afbcc454441543297a9a827b477dd3eb78d1cdd478f1482b5da08f9b6c3496e650783927e03b20e716483d5b9085143467804a5c6d40933282f"
+# url =  'http://10.0.80.133:3000/oauth/getDetails'
+# url = 'https://serene-wildwood-35121.herokuapp.com/oauth/changeUr/'
+# clientSecret = "445b354949599afbcc454441543297a9a827b477dd3eb78d1cdd478f1482b5da08f9b6c3496e650783927e03b20e716483d5b9085143467804a5c6d40933282f"
 
 # Create your views here.
 def index(request):
@@ -258,17 +258,19 @@ def applicable_jobs(cuser):
     '''
     Use this function when using sqlclient database
     '''
+    
     if not cuser:
         projects = Project.objects.all()
+        # print(projects)
     else:
-        projects = Project.objects.exclude(leader=cuser)
+        # projects = Project.objects.exclude(leader=cuser)
+        projects = Project.objects.exclude(leader__user__username=cuser)
 
     jobs = set()
     if projects:
         for project in projects:
             if not project.isCompleted:
-                tasks = Task.objects.filter(
-                        project=project, isCompleted=False)
+                tasks = Task.objects.filter(project=project, isCompleted=False)
                 for task in tasks:
                     if task.contributor_set.count() == 0:
                         jobs.add(task)
@@ -373,7 +375,7 @@ def browse_jobs(request):
     context['jobs'] = applicable_jobs(cuser)
     skill_list = Skill.objects.all()
     language_list = CommunicationLanguage.objects.all()
-    context['skill_list'] = skill_list
+    context['skill_list'] = skill_list  
     context['language_list'] = language_list
     if(request.method=='GET'):
         context['skill_check']=request.GET.get('skill',None)
